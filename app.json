@@ -1,0 +1,49 @@
+{
+  "expo": {
+    "name": "absenMandiri",
+    "slug": "absenMandiri",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends.",
+          
+          "cameraPermission": "The app accesses your photos to let you share them with your friends."
+        }
+      ]],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/safe.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "INTERNET",
+        "ACCESS_FINE_LOCATION"
+      ],
+      "package": "com.inipunyaku.absenMandiri"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "af95a3b7-c745-4b52-ae68-5e456c1ca0d7"
+      }
+    }
+  }
+}
