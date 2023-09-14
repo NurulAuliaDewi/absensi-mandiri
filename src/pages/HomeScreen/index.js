@@ -7,12 +7,11 @@ import {
   Image,
 } from "react-native";
 import React, { useState, useEffect } from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import * as Location from "expo-location";
 import { Avatar } from "react-native-paper";
 import dayjs from "dayjs";
 import * as ImagePicker from "expo-image-picker";
-import { format } from "date-fns";
 
 const HomeScreen = () => {
   const [id, setId] = useState("1");
@@ -38,6 +37,11 @@ const HomeScreen = () => {
   }, []);
 
   const buttonClick = async () => {
+    const rew = await ImagePicker.requestCameraPermissionsAsync();
+
+    if (permissionResult.granted === false) {
+      alert("You've refused to allow this app to access your photos!");
+    }
     const location = await Location.getCurrentPositionAsync({});
     setLocation(location);
     let result = await ImagePicker.launchCameraAsync({
@@ -67,7 +71,7 @@ const HomeScreen = () => {
   };
 
   return (
-    <SafeAreaView style={styles.page}>
+    <SafeAreaProvider style={styles.page}>
       <View style={styles.header}>
         <Text style={styles.greeting}>Hi, Farhan</Text>
         <View style={styles.profilePictureContainer}>
@@ -90,7 +94,7 @@ const HomeScreen = () => {
           <Text style={styles.buttonText}>Check In</Text>
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
 
@@ -122,6 +126,7 @@ const styles = StyleSheet.create({
   },
   profilePictureContainer: {
     height: 35,
+    width: 35,
     padding: 5,
     borderRadius: 180,
     alignItems: "center",

@@ -10,6 +10,7 @@ import {
 import { Avatar, Button, Menu, TouchableRipple } from "react-native-paper";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import ImageModal from "react-native-image-modal";
+
 const ProfileScreen = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [username, setUsername] = useState("farhan");
@@ -70,7 +71,7 @@ const ProfileScreen = () => {
           ) : (
             <ImageModal
               resizeMode="contain"
-              imageBackgroundColor="#F8F8F8"
+              // imageBackgroundColor="#F8F8F8"
               style={{
                 width: 150,
                 height: 150,

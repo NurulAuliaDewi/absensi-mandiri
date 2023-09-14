@@ -6,7 +6,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import Router from "./src/Router";
 import { Asset } from "expo-asset";
 import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
-import * as SplashScreen from "expo-splash-screen";
 
 import { registerTranslation } from "react-native-paper-dates";
 registerTranslation("en", {
